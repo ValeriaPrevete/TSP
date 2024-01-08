@@ -116,7 +116,7 @@ qp2qubo= QuadraticProgramToQubo()
 qubo = qp2qubo.convert(qp)
 qubitOp, offset = qubo.to_ising()
 
-# create the Ansatz: dato il numero di nodi dell'arco costruisco l'Ansatz 
+# create the Ansatz: dato il numero di nodi del grafo costruisco l'Ansatz 
 
 def W_circuit(QC, n, q1n, theta):
     QC.x(q1n)
