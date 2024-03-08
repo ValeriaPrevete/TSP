@@ -142,9 +142,10 @@ theta = ParameterVector('theta', n**2)
 base_circuit(qc,n, theta)
 for i in range(3,n+1,1):
     W_circuit(qc, i, n*(i-1), theta)
-for v in range(1,n,1):
-    for p in range(1,n,1):
-        qc.cswap(n*(n-1)+v-1,n*(p-1)+n-1,n*(p-1)+v-1)
+for k in range (3,n+1,1):
+    for v in range(1,k,1):
+        for p in range(1,k,1):
+            qc.cswap(n*(k-1)+v-1,n*(p-1)+n-(n-k)-1,n*(p-1)+v-1)
 ansatz=qc
 
 #####
